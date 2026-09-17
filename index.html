@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+<meta name="color-scheme" content="light" />
+<title>Một lá thư gửi cậu 🕯️</title>
+<meta name="description" content="Một món quà sinh nhật nhỏ, được làm riêng cho một người đặc biệt." />
+
+<!-- Fonts: Fraunces (display) + Inter (body) - đều hỗ trợ tiếng Việt -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="is-locked">
+
+  <!-- ================= INTRO SCREEN (fixed overlay) ================= -->
+  <section id="intro" class="intro" aria-label="Màn hình mở đầu">
+    <div class="decor-blob decor-blob--blue" aria-hidden="true"></div>
+    <div class="decor-blob decor-blob--pink" aria-hidden="true"></div>
+    <canvas id="sparks-canvas" class="sparks-canvas" aria-hidden="true"></canvas>
+
+    <div class="intro__content">
+      <p class="intro__eyebrow">một điều nhỏ, gửi riêng cậu</p>
+      <p class="intro__line">Có một điều mình muốn gửi đến cậu hôm nay...</p>
+
+      <button id="open-btn" class="open-btn" type="button">
+        <span>Mở ra</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= MAIN SCROLLABLE CONTENT ================= -->
+  <main id="main-content" class="main-content">
+
+    <!-- ============ SECTION 1: GREETING ============ -->
+    <section class="section section--greeting" id="greeting">
+      <div class="decor-blob decor-blob--yellow" aria-hidden="true"></div>
+      <div class="decor-blob decor-blob--mint" aria-hidden="true"></div>
+      <div class="greeting__wrap">
+        <h1 class="greeting__title" id="greeting-title">
+          <span class="reveal-word">Happy</span>
+          <span class="reveal-word">Birthday,</span>
+          <span class="reveal-word reveal-word--name" id="recipient-name">Cậu</span>
+        </h1>
+        <div class="greeting__underline" aria-hidden="true"></div>
+        <p class="greeting__hint">cuộn xuống nhé</p>
+        <div class="scroll-cue" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION: MEMORY PHOTO ============ -->
+    <section class="section section--photo" id="photo">
+      <div class="photo-bg" aria-hidden="true">
+        <img src="images/birthday-photo.jpg" alt="" class="photo-bg__img" id="photo-bg-img" />
+      </div>
+      <div class="photo-bg-overlay" aria-hidden="true"></div>
+
+      <div class="photo-frame reveal-up" id="photo-frame">
+        <img
+          src="images/birthday-photo.jpg"
+          alt="Một khoảnh khắc đáng nhớ"
+          class="photo-frame__img"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2: THE LETTER ============ -->
+    <section class="section section--letter" id="letter">
+      <div class="section-bg" aria-hidden="true">
+        <img src="images/birthday-photo.jpg" alt="" class="section-bg__img" loading="lazy" decoding="async" />
+      </div>
+      <div class="section-bg-overlay section-bg-overlay--letter" aria-hidden="true"></div>
+
+      <div class="letter__wrap">
+        <p class="letter__mark reveal-up reveal-down" aria-hidden="true">✦</p>
+
+        <p class="letter__para reveal-up reveal-down">
+          Mình không giỏi nói những điều lớn lao, nên mình gói nó vào đây —
+          một trang nhỏ, chỉ để riêng cậu đọc.
+        </p>
+
+        <p class="letter__para reveal-up reveal-down">
+          Một năm nữa lại trôi qua, và mình vẫn thấy may mắn vì có cậu trong
+          những ngày vui lẫn những ngày mệt mỏi. Cậu không cần phải hoàn hảo,
+          không cần cố gắng quá sức — chỉ cần là cậu thôi, vậy là đủ để mình
+          trân trọng rồi.
+        </p>
+
+        <p class="letter__para reveal-up reveal-down">
+          Mong năm mới của cậu nhẹ nhàng hơn năm cũ một chút, mong những điều
+          cậu đang cố gắng sẽ sớm có kết quả, và mong khi mệt, cậu luôn nhớ
+          rằng có người đang chúc cậu những điều tốt đẹp — dù không ở cạnh
+          cũng vẫn nghĩ đến cậu rất nhiều.
+        </p>
+
+        <p class="letter__para reveal-up reveal-down letter__para--last">
+          Sinh nhật vui vẻ nhé. 🕯️
+        </p>
+
+        <div class="letter-seal reveal-up" id="letter-seal" aria-hidden="true">
+          <svg class="letter-seal__svg" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- folded paper peeking out, slightly tilted -->
+            <rect class="letter-seal__paper" x="46" y="8" width="56" height="38" rx="3"
+                  transform="rotate(-4 74 27)"/>
+            <!-- envelope back -->
+            <rect class="letter-seal__envelope" x="14" y="28" width="112" height="64" rx="6"/>
+            <!-- envelope flap -->
+            <path class="letter-seal__flap" d="M14 28 L70 66 L126 28"/>
+            <!-- little sparkle accent -->
+            <circle class="letter-seal__accent" cx="119" cy="20" r="4"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3: GIFT BOX ============ -->
+    <section class="section section--gift" id="gift">
+      <div class="section-bg" aria-hidden="true">
+        <img src="images/birthday-photo.jpg" alt="" class="section-bg__img" loading="lazy" decoding="async" />
+      </div>
+      <div class="section-bg-overlay section-bg-overlay--gift" aria-hidden="true"></div>
+      <div class="decor-blob decor-blob--blue" aria-hidden="true"></div>
+      <div class="decor-blob decor-blob--pink" aria-hidden="true"></div>
+
+      <div class="gift__wrap">
+
+        <p class="gift__prompt reveal-up" id="gift-prompt">còn một điều nữa...</p>
+
+        <button id="gift-box" class="gift-box" type="button" aria-label="Mở hộp quà">
+          <svg class="gift-box__svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- box body -->
+            <rect class="gift-box__body" x="35" y="90" width="130" height="90" rx="4" fill="#FFFFFF" stroke="#1BA4D2" stroke-width="2.5"/>
+            <!-- lid group (animated) -->
+            <g class="gift-box__lid">
+              <rect class="gift-box__lid-panel" x="28" y="68" width="144" height="30" rx="4" fill="#FFFFFF" stroke="#1BA4D2" stroke-width="2.5"/>
+              <path d="M100 68 V 40" stroke="#1BA4D2" stroke-width="2.5"/>
+              <path class="gift-box__bow-l" d="M100 42 C 78 42, 70 20, 90 16 C 106 13, 104 34, 100 42Z" fill="#FFB100" stroke="#1BA4D2" stroke-width="2"/>
+              <path class="gift-box__bow-r" d="M100 42 C 122 42, 130 20, 110 16 C 94 13, 96 34, 100 42Z" fill="#FFB100" stroke="#1BA4D2" stroke-width="2"/>
+            </g>
+            <!-- ribbon down the body -->
+            <path d="M100 98 V 180" stroke="#1BA4D2" stroke-width="2.5"/>
+          </svg>
+        </button>
+
+        <p class="gift__tap-hint" id="gift-tap-hint">chạm vào hộp quà</p>
+
+        <div class="final-message" id="final-message" aria-live="polite">
+          <p class="final-message__text">
+            Cảm ơn vì đã luôn là chính cậu.<br/>Chúc mừng sinh nhật, thật sự rất nhiều. 🤍
+          </p>
+          <p class="final-message__signature">— từ người luôn mong cậu hạnh phúc</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="footer-space" aria-hidden="true"></div>
+  </main>
+
+  <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
